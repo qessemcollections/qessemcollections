@@ -6,10 +6,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="QESSEM Collections — handmade Ethiopian-inspired outfits for your special moments." />
 
-  <!-- FONT -->
+  <!-- FONTS -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
 
   <style>
     :root {
@@ -274,6 +274,100 @@
       gap: 0.5rem;
     }
 
+    /* DESIGNER / ABOUT SECTION (inspired by Amsale) */
+    .section {
+      margin-top: 3rem;
+    }
+
+    .designer-section {
+      border-radius: 1.4rem;
+      background: radial-gradient(circle at top left, rgba(15,23,42,0.9), #020617 70%);
+      border: 1px solid rgba(55,65,81,0.9);
+      padding: 1.8rem 1.5rem;
+    }
+
+    .designer-heading {
+      font-family: "Playfair Display", serif;
+      font-size: 1.5rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .designer-subheading {
+      font-size: 0.86rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 1.4rem;
+    }
+
+    .designer-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1.6fr) minmax(0, 1.1fr);
+      gap: 1.8rem;
+      align-items: flex-start;
+    }
+
+    .designer-text {
+      font-size: 0.9rem;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    .designer-text p + p {
+      margin-top: 0.75rem;
+    }
+
+    .designer-quote-block {
+      border-radius: 1.2rem;
+      padding: 1.1rem 1.1rem 1.0rem;
+      background: radial-gradient(circle at top right, rgba(251,191,36,0.18), rgba(15,23,42,0.95));
+      border: 1px solid rgba(148,163,184,0.3);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .designer-quote-mark {
+      position: absolute;
+      font-family: "Playfair Display", serif;
+      font-size: 3.2rem;
+      top: -8px;
+      left: 10px;
+      color: rgba(148,163,184,0.2);
+    }
+
+    .designer-quote {
+      font-family: "Playfair Display", serif;
+      font-size: 1.05rem;
+      margin-bottom: 0.65rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .designer-quote-am {
+      font-size: 0.95rem;
+      color: var(--muted);
+      margin-bottom: 0.6rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .designer-meta {
+      font-size: 0.78rem;
+      color: var(--muted);
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Optional image spot if you add AFU/boutique photo later */
+    .designer-photo {
+      width: 100%;
+      border-radius: 1.1rem;
+      object-fit: cover;
+      display: block;
+      margin-bottom: 0.75rem;
+      border: 1px solid rgba(31,41,55,0.9);
+    }
+
     /* FOOTER */
     footer {
       padding: 0.9rem 1.25rem 1.6rem;
@@ -287,6 +381,10 @@
     @media (max-width: 900px) {
       .hero { grid-template-columns: 1fr; }
       .hero-card { max-width: 360px; margin: auto; }
+
+      .designer-layout {
+        grid-template-columns: minmax(0,1fr);
+      }
     }
   </style>
 </head>
@@ -305,7 +403,7 @@
           <div class="logo-text-am">ቀሰም ኮሌክሽን</div>
           <div class="tagline-small-am">ባህላችንን መልበስ በእያንዳንዱ ሰአት ህንችላለን::</div>
 
-          <!-- UPDATED LOCATION LINE + GOOGLE MAPS LINK -->
+          <!-- LOCATION + GOOGLE MAPS LINK -->
           <div class="tagline-small">
             📍 CENTURY MALL GURD SHOLA · ADDIS ABABA
             <a href="https://www.google.com/maps/search/?api=1&query=Century+Mall+Gurd+Shola+Addis+Ababa"
@@ -348,10 +446,10 @@
         <div class="cta-row animate delay-3">
           <!-- Book appointment button (opens email but text is only about booking) -->
           <a href="mailto:qessemcollections@gmail.com?subject=Book%20Appointment%20-%20QESSEM%20Collections">
-            <button class="btn-primary">
-              <span>📅</span>
-              <span>Book appointment</span>
-            </button>
+           <button class="btn-primary">
+  <span>📅</span>
+  <span>Book an appointment</span>
+</button>
           </a>
 
           <!-- TikTok link -->
@@ -388,6 +486,51 @@
           <span>By AFU · QESSEM Collections</span>
         </div>
       </aside>
+    </section>
+
+    <!-- ABOUT / DESIGNER SECTION (Amsale-inspired) -->
+    <section class="section">
+      <div class="designer-section">
+        <h2 class="designer-heading">About QESSEM Collections</h2>
+        <div class="designer-subheading">THE DESIGNER · THE VISION</div>
+
+        <div class="designer-layout">
+          <div class="designer-text">
+            <p>
+              QESSEM Collections was created from a simple wish: to make it easy to wear our culture beautifully,
+              in every season of life. In the heart of Century Mall, AFU curates dresses, sets, and kids’ outfits
+              that feel warm, modern, and rooted in Ethiopian tradition.
+            </p>
+            <p>
+              Each piece is chosen with care — how it moves when you walk, how it feels on the skin, how it looks in
+              a photo with the people you love. From kristina and weddings to quiet family days, QESSEM is about
+              celebrating who you are, without feeling rushed or overwhelmed.
+            </p>
+            <p>
+              In the boutique, you’ll find patience, honest guidance, and space to try things on until you see
+              yourself and say, “Yes, this feels like me.”
+            </p>
+          </div>
+
+          <div>
+            <!-- Optional: add a real photo later as 'designer.jpg' in same folder
+            <img src="designer.jpg" alt="AFU at QESSEM Collections boutique" class="designer-photo" />
+            -->
+            <div class="designer-quote-block">
+              <div class="designer-quote-mark">“</div>
+              <div class="designer-quote">
+                True style is when you feel at peace in what you’re wearing — close to your culture, and still yourself.
+              </div>
+              <div class="designer-quote-am">
+                “በምንም ልብስ ተልባ ሆነም እርስዎን በሰላም ማሰማት ነው እውነተኛ ቅጥ፤ ባህላችንን በመያዝ እና ራስዎን በመሆን።”
+              </div>
+              <div class="designer-meta">
+                AFU · Founder, QESSEM Collections
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <footer>
