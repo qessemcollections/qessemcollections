@@ -95,6 +95,18 @@
       text-transform: uppercase;
       letter-spacing: 0.15em;
       margin-top: 0.35rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.25rem;
+      align-items: center;
+    }
+
+    .tagline-small a {
+      text-transform: none;
+      letter-spacing: 0;
+      font-size: 0.7rem;
+      text-decoration: underline;
+      color: var(--accent);
     }
 
     /* ANIMATIONS */
@@ -292,7 +304,15 @@
           <div class="logo-text-en">QESSEM <span>COLLECTIONS</span></div>
           <div class="logo-text-am">ቀሰም ኮሌክሽን</div>
           <div class="tagline-small-am">ባህላችንን መልበስ በእያንዳንዱ ሰአት ህንችላለን::</div>
-          <div class="tagline-small">CENTURY MALL · ADDIS ABABA</div>
+
+          <!-- UPDATED LOCATION LINE + GOOGLE MAPS LINK -->
+          <div class="tagline-small">
+            📍 CENTURY MALL GURD SHOLA · ADDIS ABABA
+            <a href="https://www.google.com/maps/search/?api=1&query=Century+Mall+Gurd+Shola+Addis+Ababa"
+               target="_blank" rel="noopener">
+              View on Google Maps
+            </a>
+          </div>
         </div>
       </div>
     </header>
