@@ -2,21 +2,28 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>QESSEM Collections | Handmade Style</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="QESSEM Collections — handmade Ethiopian-inspired outfits for your special moments." />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Qesem Collections | Afu</title>
+
+  <!-- Google Font -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
+    rel="stylesheet"
+  />
+
   <style>
     :root {
-      --bg: #050816;
-      --bg-soft: #111827;
-      --accent: #fbbf24;
-      --accent-soft: rgba(251, 191, 36, 0.18);
-      --text: #e5e7eb;
-      --muted: #9ca3af;
-      --card: #020617;
+      --bg: #05040a;
+      --accent: #f5b3ff;
+      --accent-soft: rgba(245, 179, 255, 0.18);
+      --text-main: #ffffff;
+      --text-soft: #d5d5e3;
+      --card-bg: rgba(10, 8, 22, 0.9);
+      --border-soft: rgba(255, 255, 255, 0.12);
+      --shadow-soft: 0 18px 40px rgba(0, 0, 0, 0.55);
+      --radius-xl: 22px;
+      --radius-pill: 999px;
+      --transition-fast: 0.25s ease;
     }
 
     * {
@@ -26,628 +33,780 @@
     }
 
     body {
-      font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: radial-gradient(circle at top left, #1f2937, #020617 55%, #000000 100%);
-      color: var(--text);
+      font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont,
+        "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, #1a1030, #05040a 55%);
+      color: var(--text-main);
       min-height: 100vh;
       display: flex;
-      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 18px;
     }
 
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    /* Layout */
     .page {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 1.5rem 1.25rem 2.5rem;
+      width: 100%;
+      max-width: 1060px;
+      background: linear-gradient(
+          135deg,
+          rgba(255, 255, 255, 0.02),
+          rgba(255, 255, 255, 0)
+        ),
+        radial-gradient(circle at 0% 0%, rgba(245, 179, 255, 0.18), transparent),
+        radial-gradient(circle at 100% 100%, rgba(152, 222, 255, 0.2), transparent);
+      border-radius: 28px;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      box-shadow: var(--shadow-soft);
+      padding: 20px 20px 24px;
       position: relative;
       overflow: hidden;
+    }
+
+    /* Soft glass circles in background */
+    .orb {
+      position: absolute;
+      border-radius: 50%;
+      background: radial-gradient(circle at 30% 30%, #f5b3ff, transparent);
+      opacity: 0.18;
+      filter: blur(4px);
+      pointer-events: none;
+      animation: float 18s infinite alternate ease-in-out;
+    }
+
+    .orb.one {
+      width: 260px;
+      height: 260px;
+      top: -80px;
+      right: -60px;
+    }
+
+    .orb.two {
+      width: 220px;
+      height: 220px;
+      bottom: -100px;
+      left: -40px;
+      animation-delay: 1.5s;
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateY(0) translateX(0) scale(1);
+      }
+      100% {
+        transform: translateY(-40px) translateX(18px) scale(1.05);
+      }
     }
 
     header {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 1rem;
-      margin-bottom: 2.5rem;
-      z-index: 2;
+      gap: 12px;
+      margin-bottom: 16px;
       position: relative;
+      z-index: 2;
     }
 
     .logo {
-      display: inline-flex;
+      display: flex;
       align-items: center;
-      gap: 0.4rem;
+      gap: 10px;
     }
 
     .logo-mark {
-      width: 30px;
-      height: 30px;
-      border-radius: 999px;
-      background: conic-gradient(from 210deg, #fbbf24, #fb7185, #38bdf8, #fbbf24);
-      box-shadow: 0 0 16px rgba(251, 191, 36, 0.4);
-    }
-
-    .logo-text {
-      font-weight: 600;
-      letter-spacing: 0.12em;
-      font-size: 0.82rem;
-      text-transform: uppercase;
-    }
-
-    .logo-text span {
-      color: var(--accent);
-    }
-
-    .tagline-small {
-      font-size: 0.72rem;
-      color: var(--muted);
-      text-transform: uppercase;
-      letter-spacing: 0.15em;
-    }
-
-    /* Hero */
-    .hero {
-      display: grid;
-      grid-template-columns: minmax(0, 3fr) minmax(0, 2.3fr);
-      gap: 2.5rem;
+      width: 34px;
+      height: 34px;
+      border-radius: 14px;
+      background: radial-gradient(circle at 20% 20%, #ffffff, #f5b3ff);
+      display: flex;
       align-items: center;
-      margin-bottom: 2.75rem;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 17px;
+      color: #2c0c31;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
+    }
+
+    .logo-text-main {
+      font-size: 18px;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .logo-text-sub {
+      font-size: 11px;
+      color: var(--text-soft);
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+    }
+
+    .tag-pill {
+      border-radius: var(--radius-pill);
+      border: 1px solid rgba(255, 255, 255, 0.32);
+      font-size: 11px;
+      padding: 4px 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--text-soft);
+      backdrop-filter: blur(10px);
+      background: linear-gradient(
+        120deg,
+        rgba(255, 255, 255, 0.06),
+        rgba(255, 255, 255, 0.01)
+      );
+    }
+
+    .content {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+      gap: 20px;
+      align-items: stretch;
       position: relative;
       z-index: 2;
     }
 
-    .badge {
+    @media (max-width: 800px) {
+      .content {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    /* LEFT: HERO */
+    .hero {
+      padding: 22px 20px;
+      border-radius: var(--radius-xl);
+      background: radial-gradient(circle at 0 0, rgba(245, 179, 255, 0.16), transparent),
+        rgba(3, 1, 11, 0.88);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.55);
+      position: relative;
+      overflow: hidden;
+      animation: fadeInUp 0.7s ease-out forwards;
+      opacity: 0;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: -1px;
+      border-radius: inherit;
+      border: 1px solid transparent;
+      background: radial-gradient(circle at 10% 0, rgba(255, 255, 255, 0.32), transparent);
+      mix-blend-mode: soft-light;
+      opacity: 0.28;
+      pointer-events: none;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(18px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .hero-kicker {
       display: inline-flex;
       align-items: center;
-      gap: 0.4rem;
-      background: rgba(15, 23, 42, 0.85);
-      border: 1px solid rgba(148, 163, 184, 0.4);
-      border-radius: 999px;
-      padding: 0.35rem 0.85rem;
-      font-size: 0.72rem;
+      gap: 6px;
+      font-size: 11px;
       text-transform: uppercase;
       letter-spacing: 0.16em;
-      color: var(--muted);
-      margin-bottom: 1rem;
-      backdrop-filter: blur(6px);
+      color: var(--text-soft);
+      margin-bottom: 10px;
     }
 
-    .badge-dot {
-      width: 7px;
-      height: 7px;
+    .hero-kicker-dot {
+      width: 6px;
+      height: 6px;
       border-radius: 999px;
-      background: #22c55e;
-      box-shadow: 0 0 10px rgba(34, 197, 94, 0.9);
+      background: #8cffd1;
+      box-shadow: 0 0 12px rgba(140, 255, 209, 0.9);
     }
 
-    h1 {
-      font-size: clamp(2.1rem, 3.2vw + 1rem, 2.9rem);
-      line-height: 1.15;
-      margin-bottom: 0.65rem;
+    .hero-title {
+      font-size: clamp(26px, 4vw, 32px);
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+      line-height: 1.2;
     }
 
-    h1 span {
+    .hero-title span {
       color: var(--accent);
+      text-shadow: 0 0 14px rgba(245, 179, 255, 0.65);
     }
 
     .hero-sub {
-      font-size: 0.98rem;
-      color: var(--muted);
-      max-width: 460px;
-      margin-bottom: 1.75rem;
-    }
-
-    .chips {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.35rem;
-      margin-bottom: 1.5rem;
-    }
-
-    .chip {
-      font-size: 0.78rem;
-      border-radius: 999px;
-      padding: 0.25rem 0.7rem;
-      background: rgba(15, 23, 42, 0.85);
-      border: 1px solid rgba(55, 65, 81, 0.7);
-      color: var(--muted);
+      font-size: 13px;
+      color: var(--text-soft);
+      max-width: 360px;
+      margin-bottom: 18px;
     }
 
     .hero-actions {
       display: flex;
       flex-wrap: wrap;
-      gap: 0.7rem;
-      align-items: center;
+      gap: 10px;
+      margin-bottom: 18px;
     }
 
-    .btn-primary {
+    .btn-primary,
+    .btn-ghost {
+      border-radius: var(--radius-pill);
+      padding: 9px 18px;
+      font-size: 13px;
+      font-weight: 500;
+      border: 1px solid transparent;
+      cursor: pointer;
+      text-decoration: none;
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 0.4rem;
-      padding: 0.75rem 1.55rem;
-      border-radius: 999px;
-      border: none;
-      cursor: pointer;
-      font-size: 0.9rem;
-      font-weight: 500;
-      color: #020617;
-      background: linear-gradient(135deg, #fbbf24, #fb7185);
-      box-shadow:
-        0 12px 30px rgba(15, 23, 42, 0.9),
-        0 0 22px rgba(251, 191, 36, 0.35);
-      transition: transform 0.15s ease, box-shadow 0.15s ease, filter 0.15s ease;
+      gap: 8px;
+      transition: transform var(--transition-fast), box-shadow var(--transition-fast),
+        background var(--transition-fast), border var(--transition-fast), color var(--transition-fast);
+      white-space: nowrap;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #f5b3ff, #ffc5c2);
+      color: #2b0a2f;
+      box-shadow: 0 12px 30px rgba(245, 179, 255, 0.4);
     }
 
     .btn-primary:hover {
       transform: translateY(-1px);
-      filter: brightness(1.05);
-      box-shadow:
-        0 18px 40px rgba(15, 23, 42, 1),
-        0 0 30px rgba(251, 191, 36, 0.5);
+      box-shadow: 0 18px 36px rgba(245, 179, 255, 0.5);
     }
 
-    .btn-primary span.icon {
-      font-size: 1.1rem;
+    .btn-ghost {
+      background: rgba(9, 5, 24, 0.9);
+      color: var(--text-soft);
+      border-color: rgba(255, 255, 255, 0.2);
     }
 
-    .hero-note {
-      font-size: 0.78rem;
-      color: var(--muted);
+    .btn-ghost:hover {
+      background: rgba(17, 12, 40, 0.98);
+      border-color: rgba(255, 255, 255, 0.35);
+      color: var(--text-main);
     }
 
-    /* Hero visual card */
-    .hero-card {
-      background: radial-gradient(circle at top, #1e293b, #020617 55%);
-      border-radius: 1.5rem;
-      border: 1px solid rgba(148, 163, 184, 0.3);
-      padding: 1.4rem 1.3rem;
-      box-shadow:
-        0 18px 45px rgba(15, 23, 42, 0.95),
-        0 0 55px rgba(15, 23, 42, 0.9);
-      position: relative;
-      overflow: hidden;
-      isolation: isolate;
-    }
-
-    .hero-card-tag {
-      font-size: 0.75rem;
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-      color: var(--muted);
-      margin-bottom: 0.4rem;
-    }
-
-    .hero-card-title {
-      font-size: 1.05rem;
-      font-weight: 500;
-      margin-bottom: 0.8rem;
-    }
-
-    .hero-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 0.65rem;
-      margin-bottom: 1.2rem;
-      font-size: 0.8rem;
-    }
-
-    .hero-tile {
-      border-radius: 1rem;
-      padding: 0.6rem 0.65rem;
-      background: rgba(15, 23, 42, 0.9);
-      border: 1px solid rgba(55, 65, 81, 0.9);
-    }
-
-    .hero-tile-label {
-      font-size: 0.7rem;
-      text-transform: uppercase;
-      letter-spacing: 0.15em;
-      color: var(--muted);
-      margin-bottom: 0.25rem;
-    }
-
-    .hero-tile-main {
-      font-size: 0.85rem;
-    }
-
-    .hero-card-footer {
-      font-size: 0.78rem;
-      color: var(--muted);
-      border-top: 1px dashed rgba(75, 85, 99, 0.7);
-      padding-top: 0.65rem;
-      margin-top: 0.3rem;
+    .hero-meta {
       display: flex;
-      justify-content: space-between;
-      gap: 0.75rem;
-      align-items: center;
       flex-wrap: wrap;
+      gap: 16px;
+      margin-top: 4px;
+      font-size: 11px;
+      color: var(--text-soft);
     }
 
-    .hero-pill {
-      font-size: 0.72rem;
-      padding: 0.25rem 0.7rem;
-      border-radius: 999px;
-      background: rgba(15, 23, 42, 0.9);
-      border: 1px solid rgba(55, 65, 81, 0.9);
-      color: var(--muted);
+    .hero-meta span {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
     }
 
-    .orb {
-      position: absolute;
-      width: 180px;
-      height: 180px;
-      border-radius: 999px;
-      filter: blur(45px);
-      opacity: 0.8;
-      z-index: -1;
+    .label-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      border: 2px solid rgba(255, 255, 255, 0.75);
+      box-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
     }
 
-    .orb--gold {
-      background: radial-gradient(circle, rgba(251, 191, 36, 0.7), transparent 60%);
-      top: -40px;
-      right: -40px;
-    }
-
-    .orb--pink {
-      background: radial-gradient(circle, rgba(236, 72, 153, 0.6), transparent 60%);
-      bottom: -40px;
-      left: 10px;
-    }
-
-    /* Highlight section */
-    .section {
-      margin-bottom: 2.4rem;
-      position: relative;
-      z-index: 2;
-    }
-
-    .section-title {
-      font-size: 1.05rem;
-      margin-bottom: 0.5rem;
-    }
-
-    .section-sub {
-      font-size: 0.9rem;
-      color: var(--muted);
-      margin-bottom: 1.25rem;
+    /* RIGHT: GALLERY + CONTACT */
+    .side {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
     }
 
     .cards-row {
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 0.9rem;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
     }
 
-    .card {
-      background: linear-gradient(145deg, rgba(15, 23, 42, 0.95), #020617);
-      border-radius: 1.15rem;
-      border: 1px solid rgba(55, 65, 81, 0.9);
-      padding: 0.85rem 0.9rem;
-      font-size: 0.82rem;
-      min-height: 120px;
+    @media (max-width: 480px) {
+      .cards-row {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    .mini-card {
+      background: rgba(7, 4, 20, 0.88);
+      border-radius: 18px;
+      padding: 10px 11px;
+      border: 1px solid rgba(255, 255, 255, 0.09);
+      backdrop-filter: blur(12px);
       position: relative;
       overflow: hidden;
     }
 
-    .card-label {
-      font-size: 0.72rem;
+    .mini-tag {
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--text-soft);
+      margin-bottom: 4px;
+    }
+
+    .mini-title {
+      font-size: 13px;
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+
+    .mini-desc {
+      font-size: 11px;
+      color: var(--text-soft);
+    }
+
+    .swatch-row {
+      display: flex;
+      gap: 6px;
+      margin-top: 6px;
+    }
+
+    .swatch {
+      width: 18px;
+      height: 18px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.35);
+      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.55);
+    }
+
+    .swatch.one {
+      background: linear-gradient(135deg, #f7c7ff, #f592ff);
+    }
+    .swatch.two {
+      background: linear-gradient(135deg, #fff8d3, #ffd08a);
+    }
+    .swatch.three {
+      background: linear-gradient(135deg, #e2f5ff, #b4f0ff);
+    }
+
+    .floating-tag {
+      position: absolute;
+      right: 8px;
+      bottom: 8px;
+      font-size: 9px;
       text-transform: uppercase;
       letter-spacing: 0.16em;
-      color: var(--muted);
-      margin-bottom: 0.4rem;
+      padding: 4px 8px;
+      border-radius: var(--radius-pill);
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      color: var(--text-soft);
+      backdrop-filter: blur(10px);
     }
 
-    .card strong {
-      font-size: 0.85rem;
+    /* Simple animated “lookbook strip” */
+    .lookbook {
+      background: var(--card-bg);
+      border-radius: var(--radius-xl);
+      padding: 10px 12px;
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      overflow: hidden;
+      position: relative;
     }
 
-    .card-glow {
+    .lookbook-label {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--text-soft);
+      margin-bottom: 8px;
+    }
+
+    .lookbook-strip {
+      display: flex;
+      gap: 8px;
+      animation: slideLoop 16s linear infinite;
+    }
+
+    @keyframes slideLoop {
+      from {
+        transform: translateX(0);
+      }
+      to {
+        transform: translateX(-50%);
+      }
+    }
+
+    .look-card {
+      min-width: 120px;
+      height: 80px;
+      border-radius: 18px;
+      background: linear-gradient(
+          135deg,
+          rgba(255, 255, 255, 0.06),
+          rgba(255, 255, 255, 0)
+        ),
+        #18122b;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      position: relative;
+      display: flex;
+      align-items: flex-end;
+      padding: 8px;
+      font-size: 11px;
+    }
+
+    .look-tag {
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--text-soft);
+      opacity: 0.9;
+    }
+
+    .look-pill {
       position: absolute;
-      inset: 0;
-      background: radial-gradient(circle at top left, rgba(251, 191, 36, 0.18), transparent 55%);
-      opacity: 0.8;
-      pointer-events: none;
-      mix-blend-mode: screen;
+      top: 7px;
+      right: 7px;
+      font-size: 9px;
+      padding: 3px 7px;
+      border-radius: var(--radius-pill);
+      background: rgba(0, 0, 0, 0.5);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
     }
 
-    .card:nth-child(2) .card-glow {
-      background: radial-gradient(circle at center, rgba(96, 165, 250, 0.25), transparent 60%);
+    /* CONTACT CARD */
+    .contact-card {
+      background: radial-gradient(circle at 0 0, var(--accent-soft), transparent),
+        rgba(6, 3, 20, 0.95);
+      border-radius: var(--radius-xl);
+      padding: 14px 12px 12px;
+      border: 1px solid rgba(255, 255, 255, 0.16);
     }
 
-    .card:nth-child(3) .card-glow {
-      background: radial-gradient(circle at bottom right, rgba(236, 72, 153, 0.22), transparent 60%);
-    }
-
-    /* Contact */
-    .contact {
-      border-radius: 1.4rem;
-      border: 1px solid rgba(55, 65, 81, 0.9);
-      background: radial-gradient(circle at top left, #0b1120, #020617 70%);
-      padding: 1.4rem 1.3rem;
-      display: grid;
-      grid-template-columns: minmax(0, 1.5fr) minmax(0, 1.2fr);
-      gap: 1.6rem;
+    .contact-header {
+      display: flex;
+      justify-content: space-between;
       align-items: center;
+      gap: 10px;
+      margin-bottom: 8px;
     }
 
     .contact-title {
-      font-size: 1rem;
-      margin-bottom: 0.4rem;
+      font-size: 13px;
+      font-weight: 600;
     }
 
-    .contact-text {
-      font-size: 0.9rem;
-      color: var(--muted);
-      max-width: 320px;
+    .contact-sub {
+      font-size: 11px;
+      color: var(--text-soft);
     }
 
-    .contact-meta {
-      font-size: 0.8rem;
-      color: var(--muted);
-      margin-top: 0.65rem;
-    }
-
-    .contact-tag {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.35rem;
-      font-size: 0.72rem;
-      text-transform: uppercase;
-      letter-spacing: 0.14em;
-      color: var(--muted);
-      margin-bottom: 0.6rem;
-    }
-
-    .dot-small {
-      width: 6px;
-      height: 6px;
-      border-radius: 999px;
-      background: var(--accent);
-    }
-
-    .cta-stack {
-      display: flex;
-      flex-direction: column;
-      gap: 0.6rem;
-      align-items: flex-start;
-    }
-
-    .social-row {
+    .contact-badges {
       display: flex;
       flex-wrap: wrap;
-      gap: 0.5rem;
-      font-size: 0.8rem;
+      gap: 6px;
+      margin-bottom: 10px;
     }
 
-    .social-pill {
-      padding: 0.25rem 0.7rem;
-      border-radius: 999px;
-      background: rgba(15, 23, 42, 0.9);
-      border: 1px dashed rgba(75, 85, 99, 0.9);
-      color: var(--muted);
+    .badge {
+      font-size: 10px;
+      padding: 4px 9px;
+      border-radius: var(--radius-pill);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      color: var(--text-soft);
+      background: rgba(2, 0, 10, 0.8);
     }
 
-    .highlight-email {
+    .badge.highlight {
+      border-color: rgba(245, 179, 255, 0.7);
       color: var(--accent);
-      font-weight: 500;
+      background: rgba(245, 179, 255, 0.05);
+    }
+
+    .contact-form {
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+      gap: 8px;
+      align-items: center;
+    }
+
+    @media (max-width: 560px) {
+      .contact-form {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    .field {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    label {
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--text-soft);
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      padding: 7px 9px;
+      border-radius: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      background: rgba(3, 0, 13, 0.75);
+      color: var(--text-main);
+      font-family: inherit;
+      font-size: 12px;
+      outline: none;
+      transition: border var(--transition-fast), box-shadow var(--transition-fast),
+        background var(--transition-fast);
+    }
+
+    input::placeholder,
+    textarea::placeholder {
+      color: rgba(213, 213, 227, 0.7);
+      font-size: 11px;
+    }
+
+    input:focus,
+    textarea:focus {
+      border-color: rgba(245, 179, 255, 0.9);
+      box-shadow: 0 0 0 1px rgba(245, 179, 255, 0.55);
+      background: rgba(8, 4, 20, 0.95);
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 46px;
+      max-height: 80px;
+    }
+
+    .contact-note {
+      font-size: 10px;
+      color: var(--text-soft);
+      margin-top: 5px;
+    }
+
+    .contact-note a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    .contact-note a:hover {
+      text-decoration: underline;
     }
 
     footer {
-      padding: 0.9rem 1.25rem 1.6rem;
-      font-size: 0.78rem;
-      color: var(--muted);
-      text-align: center;
-      margin-top: auto;
+      margin-top: 18px;
+      font-size: 10px;
+      color: var(--text-soft);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 8px;
+      align-items: center;
+      position: relative;
+      z-index: 2;
     }
 
-    /* Responsive */
-    @media (max-width: 900px) {
-      .hero {
-        grid-template-columns: minmax(0, 1fr);
-      }
-
-      .hero-card {
-        max-width: 360px;
-        margin: 0 auto;
-        width: 100%;
-      }
-
-      .contact {
-        grid-template-columns: minmax(0, 1fr);
-      }
-
-      .section {
-        margin-bottom: 2.1rem;
-      }
+    .socials {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      font-size: 11px;
     }
 
-    @media (max-width: 700px) {
-      .cards-row {
-        grid-template-columns: minmax(0, 1fr);
-      }
+    .socials a {
+      color: var(--text-soft);
+      text-decoration: none;
+      border-bottom: 1px dashed rgba(255, 255, 255, 0.24);
+      padding-bottom: 1px;
+    }
 
-      header {
-        flex-direction: column;
-        align-items: flex-start;
-      }
+    .socials a:hover {
+      color: var(--accent);
+      border-bottom-style: solid;
     }
   </style>
 </head>
 <body>
   <div class="page">
-    <!-- Floating background orbs -->
-    <div class="orb orb--gold"></div>
-    <div class="orb orb--pink"></div>
+    <div class="orb one"></div>
+    <div class="orb two"></div>
 
     <header>
       <div class="logo">
-        <div class="logo-mark"></div>
+        <div class="logo-mark">Q</div>
         <div>
-          <div class="logo-text">QESSEM <span>COLLECTIONS</span></div>
-          <div class="tagline-small">Century Mall · Addis Ababa</div>
+          <div class="logo-text-main">Qesem Collections</div>
+          <div class="logo-text-sub">By Afu</div>
         </div>
       </div>
+      <div class="tag-pill">Addis · Modern · Modest</div>
     </header>
 
-    <main>
-      <!-- HERO -->
+    <main class="content">
+      <!-- LEFT: HERO -->
       <section class="hero">
-        <div>
-          <div class="badge">
-            <div class="badge-dot"></div>
-            Handmade looks for bright moments
-          </div>
-          <h1>
-            Handmade Ethiopian style<br />
-            for your <span>special days</span>.
-          </h1>
-          <p class="hero-sub">
-            Dresses, sets, and kids’ outfits that feel warm, modern, and ready for
-            weddings, kristina, and family photos you’ll love.
-          </p>
-          <div class="chips">
-            <span class="chip">Dresses</span>
-            <span class="chip">Kids & Kristina</span>
-            <span class="chip">Gifts</span>
-            <span class="chip">Family sets</span>
-          </div>
-          <div class="hero-actions">
-            <a href="mailto:qessemcollections@gmail.com?subject=New%20inquiry%20from%20QESSEM%20website">
-              <button class="btn-primary" type="button">
-                <span class="icon">✉️</span>
-                <span>Email QESSEM Collections</span>
-              </button>
-            </a>
-            <p class="hero-note">
-              One quick email. Tell AFU what you’re looking for.
-            </p>
-          </div>
+        <div class="hero-kicker">
+          <span class="hero-kicker-dot"></span>
+          <span>New styles. Soft colors. Quiet luxury.</span>
         </div>
-
-        <!-- VISUAL CARD -->
-        <aside class="hero-card">
-          <div class="hero-card-tag">Store Snapshot</div>
-          <div class="hero-card-title">What you’ll find in the boutique</div>
-
-          <div class="hero-grid">
-            <div class="hero-tile">
-              <div class="hero-tile-label">For Her</div>
-              <div class="hero-tile-main">
-                Soft, elegant dresses with Ethiopian touches — from simple days to big nights.
-              </div>
-            </div>
-            <div class="hero-tile">
-              <div class="hero-tile-label">For Little Ones</div>
-              <div class="hero-tile-main">
-                Sweet kristina and holiday looks for kids and babies.
-              </div>
-            </div>
-            <div class="hero-tile">
-              <div class="hero-tile-label">For Family</div>
-              <div class="hero-tile-main">
-                Matching ideas for couples, siblings, and family photos.
-              </div>
-            </div>
-            <div class="hero-tile">
-              <div class="hero-tile-label">For Gifts</div>
-              <div class="hero-tile-main">
-                Thoughtful pieces to bring joy to loved ones near and far.
-              </div>
-            </div>
-          </div>
-
-          <div class="hero-card-footer">
-            <span>“Come as you are. We’ll help you find your piece.”</span>
-            <span class="hero-pill">By AFU · QESSEM Collections</span>
-          </div>
-        </aside>
-      </section>
-
-      <!-- HIGHLIGHT CARDS -->
-      <section class="section">
-        <h2 class="section-title">Why people love QESSEM Collections</h2>
-        <p class="section-sub">
-          Simple, honest, and made to make you feel at home in your own style.
+        <h1 class="hero-title">
+          Everyday <span>elegance</span><br />
+          with an Ethiopian soul.
+        </h1>
+        <p class="hero-sub">
+          Handpicked pieces for kristina, celebrations, and your “just because” days.
         </p>
 
-        <div class="cards-row">
-          <article class="card">
-            <div class="card-glow"></div>
-            <div class="card-label">Feel</div>
-            <strong>Soft fabrics, kind service.</strong>
-            <p>
-              Pieces you can move in, laugh in, and celebrate in — with patient help while you choose.
-            </p>
-          </article>
+        <div class="hero-actions">
+          <a href="#contact" class="btn-primary">
+            Book a look ✨
+          </a>
+          <a href="https://vm.tiktok.com/ZMAvvLkK4/" target="_blank" class="btn-ghost" rel="noopener">
+            Watch on TikTok
+          </a>
+        </div>
 
-          <article class="card">
-            <div class="card-glow"></div>
-            <div class="card-label">Occasions</div>
-            <strong>For big days and quiet days.</strong>
-            <p>
-              From kristina and weddings to simple outings, there’s something for every moment.
-            </p>
-          </article>
-
-          <article class="card">
-            <div class="card-glow"></div>
-            <div class="card-label">Care</div>
-            <strong>Made with heart in Addis.</strong>
-            <p>
-              Local, thoughtful, and focused on outfits that honor culture and feel current.
-            </p>
-          </article>
+        <div class="hero-meta">
+          <span><span class="label-dot"></span> Century Mall · Gurd Shola</span>
+          <span>Curated by Afu</span>
         </div>
       </section>
 
-      <!-- CONTACT / EMAIL -->
-      <section class="section">
-        <div class="contact">
-          <div>
-            <div class="contact-tag">
-              <span class="dot-small"></span>
-              Ready when you are
+      <!-- RIGHT: LOOKBOOK + CONTACT -->
+      <section class="side">
+        <div class="cards-row">
+          <div class="mini-card">
+            <div class="mini-tag">For her</div>
+            <div class="mini-title">Soft, flowing silhouettes</div>
+            <div class="mini-desc">
+              From kristina to coffee dates.
             </div>
-            <h2 class="contact-title">Tell AFU what you need.</h2>
-            <p class="contact-text">
-              Share your event, sizes, and any colors you love. You’ll get a warm, personal reply —
-              no pressure, just options.
-            </p>
-            <p class="contact-meta">
-              Tip: attach a photo or two of styles you like. It helps AFU prepare ideas for you.
-            </p>
+            <div class="swatch-row">
+              <div class="swatch one"></div>
+              <div class="swatch two"></div>
+              <div class="swatch three"></div>
+            </div>
+            <div class="floating-tag">Limited drops</div>
           </div>
 
-          <div class="cta-stack">
-            <a href="mailto:qessemcollections@gmail.com?subject=New%20inquiry%20from%20QESSEM%20website">
-              <button class="btn-primary" type="button">
-                <span class="icon">💌</span>
-                <span>Email QESSEM Collections now</span>
-              </button>
-            </a>
-            <div class="social-row">
-              <span class="social-pill">
-                Email: <span class="highlight-email">qessemcollections@gmail.com</span>
-              </span>
-              <span class="social-pill">Instagram · TikTok: ask for @qesem_collection</span>
+          <div class="mini-card">
+            <div class="mini-tag">In store</div>
+            <div class="mini-title">Try it. Feel it. Love it.</div>
+            <div class="mini-desc">
+              Visit and style it with Afu, one-on-one.
             </div>
           </div>
+        </div>
+
+        <div class="lookbook">
+          <div class="lookbook-label">Lookbook preview</div>
+          <div class="lookbook-strip">
+            <div class="look-card">
+              <span class="look-tag">White & Gold</span>
+              <span class="look-pill">Kristina</span>
+            </div>
+            <div class="look-card">
+              <span class="look-tag">Soft Blush</span>
+              <span class="look-pill">Everyday</span>
+            </div>
+            <div class="look-card">
+              <span class="look-tag">Deep Emerald</span>
+              <span class="look-pill">Evening</span>
+            </div>
+            <!-- duplicate for smooth loop -->
+            <div class="look-card">
+              <span class="look-tag">White & Gold</span>
+              <span class="look-pill">Kristina</span>
+            </div>
+            <div class="look-card">
+              <span class="look-tag">Soft Blush</span>
+              <span class="look-pill">Everyday</span>
+            </div>
+          </div>
+        </div>
+
+        <div id="contact" class="contact-card">
+          <div class="contact-header">
+            <div>
+              <div class="contact-title">Say hi to Afu</div>
+              <div class="contact-sub">Ask about sizes, colors, or your event.</div>
+            </div>
+          </div>
+
+          <div class="contact-badges">
+            <div class="badge highlight">Kristina outfits</div>
+            <div class="badge">Special occasions</div>
+            <div class="badge">Gift ideas</div>
+          </div>
+
+          <!-- This uses mailto: so it opens Gmail / email app -->
+          <form
+            class="contact-form"
+            action="mailto:qessemcollections@gmail.com"
+            method="post"
+            enctype="text/plain"
+          >
+            <div class="field">
+              <label for="name">Name</label>
+              <input
+                id="name"
+                name="Name"
+                type="text"
+                placeholder="Your name"
+                required
+              />
+            </div>
+
+            <div class="field">
+              <label for="message">Message</label>
+              <textarea
+                id="message"
+                name="Message"
+                placeholder="My event is on..., I’d like..."
+                required
+              ></textarea>
+            </div>
+
+            <div class="field">
+              <button type="submit" class="btn-primary">
+                Email Afu
+              </button>
+              <p class="contact-note">
+                Or write directly:
+                <a href="mailto:qessemcollections@gmail.com">
+                  qessemcollections@gmail.com
+                </a>
+              </p>
+            </div>
+          </form>
         </div>
       </section>
     </main>
 
     <footer>
-      © <span id="year"></span> QESSEM Collections · Addis Ababa, Ethiopia
+      <div>© <span id="year"></span> Qesem Collections · Afu</div>
+      <div class="socials">
+        <a href="https://vm.tiktok.com/ZMAvvLkK4/" target="_blank" rel="noopener">
+          TikTok: @qesem_collection
+        </a>
+        <!-- Add Instagram later if you want -->
+        <!-- <a href="https://instagram.com/USERNAME" target="_blank" rel="noopener">Instagram</a> -->
+      </div>
     </footer>
   </div>
 
   <script>
+    // Set current year in footer
     document.getElementById("year").textContent = new Date().getFullYear();
   </script>
 </body>
