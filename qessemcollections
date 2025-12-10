@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>QESSEM Collections | Century Mall, Gurd Shola</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="QESSEM Collections - Handmade Ethiopian clothing, gifts, and accessories at Century Mall, Gurd Shola.">
+  <style>
+    :root {
+      --primary: #1a1a1a;
+      --accent: #c89b3c;
+      --light: #f7f3ea;
+      --text: #333333;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    body {
+      background: #ffffff;
+      color: var(--text);
+      line-height: 1.6;
+    }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      background: rgba(255, 255, 255, 0.95);
+      border-bottom: 1px solid #eee;
+      backdrop-filter: blur(10px);
+    }
+    .nav {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0.75rem 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .logo {
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      font-size: 0.95rem;
+    }
+    .logo span {
+      color: var(--accent);
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+      font-size: 0.9rem;
+    }
+    nav a {
+      position: relative;
+      padding-bottom: 0.1rem;
+    }
+    nav a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 2px;
+      background: var(--accent);
+      transition: width 0.2s ease;
+    }
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    /* Hero */
+    .hero {
+      background: radial-gradient(circle at top left, #f8efe0, #ffffff);
+      padding: 4rem 1.25rem 3rem;
+    }
+    .hero-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+      gap: 2.5rem;
+      align-items: center;
+    }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      background: #fff;
+      border-radius: 999px;
+      padding: 0.4rem 0.9rem;
+      border: 1px solid #eee;
+      margin-bottom: 1rem;
+    }
+    .badge-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 999px;
+      background: #1ac26b;
+    }
+    .hero h1 {
+      font-size: 2.4rem;
+      line-height: 1.15;
+      margin-bottom: 0.75rem;
+      color: var(--primary);
+    }
+    .hero h1 span {
+      color: var(--accent);
+    }
+    .hero-sub {
+      font-size: 0.98rem;
+      max-width: 500px;
+      margin-bottom: 1.5rem;
+      color: #555;
+    }
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-bottom: 1.75rem;
+    }
+    .btn-main {
+      background: var(--primary);
+      color: #fff;
+      border-radius: 999px;
+      padding: 0.7rem 1.5rem;
+      font-size: 0.9rem;
+      border: none;
+      cursor: pointer;
+      transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.2s ease;
+      box-shadow: 0 12px 24px rgba(0,0,0,0.08);
+    }
+    .btn-main:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 16px 32px rgba(0,0,0,0.12);
+      background: #000;
+    }
+    .btn-ghost {
+      background: #ffffff;
+      border-radius: 999px;
+      padding: 0.7rem 1.2rem;
+      font-size: 0.9rem;
+      border: 1px solid #ddd;
+      cursor: pointer;
+      transition: background 0.15s ease, border-color 0.15s ease;
+    }
+    .btn-ghost:hover {
+      background: #f5f5f5;
+      border-color: #ccc;
+    }
+    .hero-meta {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: #888;
+    }
+    .hero-meta strong {
+      color: var(--primary);
+    }
+    .hero-card {
+      background: #fff;
+      border-radius: 1.5rem;
+      border: 1px solid #eee;
+      padding: 1.75rem 1.5rem;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.06);
+    }
+    .hero-card-tag {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: #888;
+      margin-bottom: 0.35rem;
+    }
+    .hero-card-title {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+    }
+    .hero-card-list {
+      list-style: none;
+      font-size: 0.9rem;
+      margin-bottom: 1.25rem;
+    }
+    .hero-card-list li {
+      margin-bottom: 0.4rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 999px;
+      background: var(--accent);
+    }
+    .hero-card-footer {
+      font-size: 0.8rem;
+      color: #777;
+      border-top: 1px dashed #eee;
+      padding-top: 0.8rem;
+      margin-top: 0.5rem;
+    }
+
+    /* Sections */
+    section {
+      padding: 3rem 1.25rem;
+    }
+    .section-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .section-header {
+      margin-bottom: 1.75rem;
+    }
+    .section-label {
+      text-transform: uppercase;
+      font-size: 0.8rem;
+      letter-spacing: 0.16em;
+      color: #999;
+      margin-bottom: 0.3rem;
+    }
+    .section-title {
+      font-size: 1.5rem;
+      color: var(--primary);
+      margin-bottom: 0.4rem;
+    }
+    .section-sub {
+      font-size: 0.95rem;
+      color: #666;
+      max-width: 550px;
+    }
+
+    /* About */
+    .about-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+      gap: 2rem;
+    }
+    .about-card {
+      background: var(--light);
+      border-radius: 1.25rem;
+      padding: 1.5rem 1.4rem;
+    }
+    .about-card h3 {
+      font-size: 1.05rem;
+      margin-bottom: 0.6rem;
+    }
+    .about-card p {
+      font-size: 0.92rem;
+      color: #555;
+    }
+    .about-list {
+      list-style: none;
+      margin-top: 0.75rem;
+      font-size: 0.9rem;
+    }
+    .about-list li {
+      margin-bottom: 0.4rem;
+    }
+
+    /* Collections */
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.2rem;
+    }
+    .card {
+      border-radius: 1.1rem;
+      border: 1px solid #eee;
+      padding: 1.1rem 1rem;
+      background: #fff;
+    }
+    .card-tag {
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: #999;
+      margin-bottom: 0.35rem;
+    }
+    .card h3 {
+      font-size: 1rem;
+      margin-bottom: 0.4rem;
+      color: var(--primary);
+    }
+    .card p {
+      font-size: 0.9rem;
+      color: #555;
+      margin-bottom: 0.4rem;
+    }
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+      margin-top: 0.4rem;
+    }
+    .pill {
+      font-size: 0.75rem;
+      padding: 0.2rem 0.6rem;
+      border-radius: 999px;
+      background: #f5f5f5;
+      color: #666;
+    }
+
+    /* Visit */
+    .visit-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+      gap: 1.75rem;
+      align-items: flex-start;
+    }
+    .visit-block {
+      font-size: 0.95rem;
+      color: #555;
+    }
+    .visit-block p {
+      margin-bottom: 0.5rem;
+    }
+    .visit-details {
+      margin-top: 0.75rem;
+      font-size: 0.9rem;
+    }
+    .visit-details p {
+      margin-bottom: 0.35rem;
+    }
+    .highlight-box {
+      background: #111;
+      color: #fff;
+      border-radius: 1.2rem;
+      padding: 1.4rem 1.3rem;
+      font-size: 0.92rem;
+    }
+    .highlight-box h3 {
+      font-size: 1.05rem;
+      margin-bottom: 0.5rem;
+    }
+    .highlight-box p {
+      margin-bottom: 0.4rem;
+    }
+    .highlight-box small {
+      font-size: 0.8rem;
+      opacity: 0.85;
+    }
+
+    /* Contact */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+      gap: 2rem;
+    }
+    .contact-info p {
+      font-size: 0.95rem;
+      margin-bottom: 0.4rem;
+      color: #555;
+    }
+    .contact-info strong {
+      color: var(--primary);
+    }
+    .contact-form {
+      background: #fafafa;
+      border-radius: 1.25rem;
+      padding: 1.4rem 1.3rem;
+      border: 1px solid #eee;
+    }
+    .contact-form-row {
+      margin-bottom: 0.7rem;
+    }
+    .contact-form label {
+      display: block;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: #777;
+      margin-bottom: 0.25rem;
+    }
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      border-radius: 0.6rem;
+      border: 1px solid #ddd;
+      padding: 0.5rem 0.6rem;
+      font-size: 0.9rem;
+      outline: none;
+    }
+    .contact-form textarea {
+      min-height: 90px;
+      resize: vertical;
+    }
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+      border-color: var(--accent);
+    }
+
+    footer {
+      border-top: 1px solid #eee;
+      padding: 1.5rem 1.25rem 2rem;
+      font-size: 0.8rem;
+      color: #888;
+    }
+    .footer-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 0.75rem;
+    }
+    .footer-inner a {
+      color: #666;
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .hero-inner,
+      .about-grid,
+      .grid-3,
+      .visit-grid,
+      .contact-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+      .hero {
+        padding-top: 3.3rem;
+      }
+    }
+    @media (max-width: 600px) {
+      nav ul {
+        display: none;
+      }
+      .hero h1 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <div class="logo">QESSEM <span>COLLECTIONS</span></div>
+    <nav>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#collections">Collections</a></li>
+        <li><a href="#visit">Visit Us</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="hero-inner">
+      <div>
+        <div class="badge">
+          <div class="badge-dot"></div>
+          Handmade Clothing • Addis Ababa
+        </div>
+        <h1>Handmade style for your<br><span>weddings, kristina & everyday</span>.</h1>
+        <p class="hero-sub">
+          QESSEM Collections by AFU brings together traditional Ethiopian touches and modern design — 
+          perfect for weddings, kristina (christenings), holidays, or everyday elegance.
+        </p>
+        <div class="hero-actions">
+          <a href="#visit"><button class="btn-main">Visit us at Century Mall</button></a>
+          <a href="#contact"><button class="btn-ghost">Order / Custom request</button></a>
+        </div>
+        <p class="hero-meta">
+          <strong>Century Mall, Gurd Shola</strong> • Addis Ababa, Ethiopia
+        </p>
+      </div>
+
+      <aside class="hero-card">
+        <div class="hero-card-tag">In-Store Highlights</div>
+        <div class="hero-card-title">What you’ll find at QESSEM Collections</div>
+        <ul class="hero-card-list">
+          <li><span class="dot"></span> Women’s dresses with Ethiopian detail</li>
+          <li><span class="dot"></span> Kids’ outfits for holidays & kristina</li>
+          <li><span class="dot"></span> Gift items & accessories</li>
+          <li><span class="dot"></span> Custom orders for special events</li>
+        </ul>
+        <div class="hero-card-footer">
+          Ask AFU about custom colors, sizing, and family sets (matching looks for couples & kids).
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="section-inner">
+      <div class="section-header">
+        <div class="section-label">About</div>
+        <h2 class="section-title">QESSEM Collections by AFU</h2>
+        <p class="section-sub">
+          A warm, welcoming boutique focused on handcrafted pieces that feel both traditional and modern —
+          made to celebrate your story, your culture, and your occasions.
+        </p>
+      </div>
+
+      <div class="about-grid">
+        <div>
+          <p style="font-size:0.95rem; color:#555;">
+            Every piece at QESSEM Collections is chosen with care. Whether you are preparing for a
+            kristina, engagement, wedding, or just refreshing your wardrobe, AFU helps you find outfits
+            that feel special — but still comfortable and easy to wear.
+          </p>
+          <ul class="about-list">
+            <li>• Thoughtful designs inspired by Ethiopian heritage.</li>
+            <li>• Styles for women, kids, and family sets.</li>
+            <li>• Options for gifts, visitors from abroad, and special events.</li>
+            <li>• Friendly, one-on-one support to help you choose the right look.</li>
+          </ul>
+        </div>
+
+        <div class="about-card">
+          <h3>Meet AFU</h3>
+          <p>
+            AFU is the heart behind QESSEM Collections — a creative store owner who loves helping
+            customers feel confident and beautiful in what they wear.
+          </p>
+          <ul class="about-list">
+            <li>✔ Patient, honest guidance — no pressure.</li>
+            <li>✔ Experience with event outfits (weddings, kristina, holidays).</li>
+            <li>✔ Happy to coordinate matching looks for couples & families.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COLLECTIONS -->
+  <section id="collections" style="background:#faf7f1;">
+    <div class="section-inner">
+      <div class="section-header">
+        <div class="section-label">Collections</div>
+        <h2 class="section-title">What you can shop</h2>
+        <p class="section-sub">
+          From everyday dresses to special-occasion outfits, QESSEM Collections offers a tight, curated selection
+          so it’s easy to find something you love.
+        </p>
+      </div>
+
+      <div class="grid-3">
+        <div class="card">
+          <div class="card-tag">For Her</div>
+          <h3>Women’s Wear</h3>
+          <p>
+            Elegant dresses and sets with Ethiopian patterns, soft fabrics, and flattering cuts for daily wear and events.
+          </p>
+          <div class="pill-row">
+            <span class="pill">Dresses</span>
+            <span class="pill">Sets</span>
+            <span class="pill">Holiday looks</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-tag">For Kids</div>
+          <h3>Kids & Kristina</h3>
+          <p>
+            Sweet, comfortable outfits perfect for kristina, holidays, and family photos that you’ll remember forever.
+          </p>
+          <div class="pill-row">
+            <span class="pill">Kristina outfits</span>
+            <span class="pill">Holiday looks</span>
+            <span class="pill">Matching sets</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-tag">Special</div>
+          <h3>Gifts & Custom Orders</h3>
+          <p>
+            Thoughtful gifts for loved ones and custom orders for weddings, bridal parties, or visiting family from abroad.
+          </p>
+          <div class="pill-row">
+            <span class="pill">Gift items</span>
+            <span class="pill">Custom sizing</span>
+            <span class="pill">Family sets</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VISIT US -->
+  <section id="visit">
+    <div class="section-inner">
+      <div class="section-header">
+        <div class="section-label">Visit</div>
+        <h2 class="section-title">Find QESSEM Collections</h2>
+        <p class="section-sub">
+          Conveniently located inside Century Mall, Gurd Shola — easy to reach for families, friends, and visitors.
+        </p>
+      </div>
+
+      <div class="visit-grid">
+        <div class="visit-block">
+          <p><strong>Store location</strong></p>
+          <div class="visit-details">
+            <p>📍 <strong>QESSEM Collections</strong></p>
+            <p>Century Mall, Gurd Shola</p>
+            <p>Addis Ababa, Ethiopia</p>
+            <p style="margin-top:0.5rem;">Ask security or the information desk for “QESSEM Collections” if you need help finding the store.</p>
+          </div>
+
+          <div class="visit-details" style="margin-top:1rem;">
+            <p><strong>Opening hours*</strong></p>
+            <p>Mon – Sat: 10:00 AM – 8:00 PM</p>
+            <p>Sun: 11:00 AM – 7:00 PM</p>
+            <p style="font-size:0.8rem; color:#888; margin-top:0.3rem;">*Hours can change on holidays — you can call or message before coming.</p>
+          </div>
+        </div>
+
+        <div class="highlight-box">
+          <h3>Coming for a special event?</h3>
+          <p>
+            If you’re shopping for a wedding, kristina, or big family celebration, you can contact AFU ahead of time.
+            She can prepare options in your size and style to make your visit easier.
+          </p>
+          <p style="margin-top:0.6rem;">
+            <small>Tip: bring a photo of colors or styles you like — AFU will use it to guide you.</small>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" style="background:#f9f9f9;">
+    <div class="section-inner">
+      <div class="section-header">
+        <div class="section-label">Contact</div>
+        <h2 class="section-title">Call, message, or DM</h2>
+        <p class="section-sub">
+          Reach out for questions, custom orders, or to check if a style is available in your size before you come.
+        </p>
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-info">
+          <p><strong>Phone / WhatsApp:</strong><br>
+            +251 9XX XXX XXX
+          </p>
+          <p><strong>Email:</strong><br>
+            qessem.collections@gmail.com
+          </p>
+          <p><strong>Instagram:</strong><br>
+            <a href="https://instagram.com/qessem_collections" target="_blank">@qessem_collections</a>
+          </p>
+          <p style="margin-top:0.8rem;">
+            For faster help, send:
+          </p>
+          <ul class="about-list">
+            <li>• Your name</li>
+            <li>• Date of your event (if any)</li>
+            <li>• Size(s) and who you’re shopping for</li>
+            <li>• Any photo or color inspiration</li>
+          </ul>
+        </div>
+
+        <div class="contact-form">
+          <!-- This form is visual only; add backend/email service to make it work -->
+          <div class="contact-form-row">
+            <label for="name">Name</label>
+            <input id="name" type="text" placeholder="Your name">
+          </div>
+          <div class="contact-form-row">
+            <label for="phone">Phone or Email</label>
+            <input id="phone" type="text" placeholder="+251… or your email">
+          </div>
+          <div class="contact-form-row">
+            <label for="message">Message</label>
+            <textarea id="message" placeholder="Tell AFU what you’re looking for…"></textarea>
+          </div>
+          <button class="btn-main" type="button">Send (connect later)</button>
+          <p style="font-size:0.8rem; color:#888; margin-top:0.5rem;">
+            This form is for design only — ask your web developer to connect it to email or WhatsApp.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div>© <span id="year"></span> QESSEM Collections. All rights reserved.</div>
+    <div>Century Mall, Gurd Shola • Addis Ababa, Ethiopia</div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
